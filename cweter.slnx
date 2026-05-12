@@ -1,0 +1,9 @@
+<Solution>
+  <Project Path="cweter/cweter.csproj">
+    <Deploy Solution="Debug|*" />
+  </Project>
+  <Project Path="zad19.3/zad19.3.csproj">
+    <Deploy Solution="Debug|*" />
+  </Project>
+  <Project Path="zad19.4/zad19.4.csproj" />
+</Solution>

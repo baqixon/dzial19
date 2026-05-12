@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="zad19._3.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Konfigurator pizzy"
+                   FontSize="26"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <!-- Rozmiar pizzy -->
+            <Frame BorderColor="AntiqueWhite">
+                <VerticalStackLayout>
+
+                    <Label Text="Rozmiar pizzy"
+                           FontSize="20"
+                           FontAttributes="Bold" />
+
+                    <RadioButton Content="Mała (25 cm) – 20 zł"
+                                 GroupName="Rozmiar"
+                                 CheckedChanged="OnOptionChanged" />
+
+                    <RadioButton Content="Średnia (32 cm) – 28 zł"
+                                 GroupName="Rozmiar"
+                                 IsChecked="True"
+                                 CheckedChanged="OnOptionChanged" />
+
+                    <RadioButton Content="Duża (45 cm) – 38 zł"
+                                 GroupName="Rozmiar"
+                                 CheckedChanged="OnOptionChanged" />
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Rodzaj ciasta -->
+            <Frame BorderColor="Gray">
+                <VerticalStackLayout>
+
+                    <Label Text="Rodzaj ciasta"
+                           FontSize="20"
+                           FontAttributes="Bold" />
+
+                    <RadioButton Content="Cienkie"
+                                 GroupName="Ciasto"
+                                 IsChecked="True"
+                                 CheckedChanged="OnOptionChanged" />
+
+                    <RadioButton Content="Grube"
+                                 GroupName="Ciasto"
+                                 CheckedChanged="OnOptionChanged" />
+
+                    <RadioButton Content="Z serem w brzegu (+5 zł)"
+                                 GroupName="Ciasto"
+                                 CheckedChanged="OnOptionChanged" />
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Ilość -->
+            <Frame BorderColor="Gray">
+                <VerticalStackLayout>
+
+                    <Label Text="Ilość pizz"
+                           FontSize="20"
+                           FontAttributes="Bold" />
+
+                    <Stepper x:Name="iloscStepper"
+                             Minimum="1"
+                             Maximum="10"
+                             Increment="1"
+                             Value="1"
+                             ValueChanged="OnStepperChanged" />
+
+                    <Label x:Name="iloscLabel"
+                           Text="Ilość: 1"
+                           FontSize="18" />
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Godzina dostawy -->
+            <Frame BorderColor="Gray">
+                <VerticalStackLayout>
+
+                    <Label Text="Godzina dostawy"
+                           FontSize="20"
+                           FontAttributes="Bold" />
+
+                    <TimePicker x:Name="godzinaPicker"
+                                Format="HH:mm"
+                                Time="18:00" />
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Podsumowanie -->
+            <Frame BackgroundColor="LightYellow"
+                   BorderColor="Orange">
+
+                <VerticalStackLayout>
+
+                    <Label Text="Podsumowanie"
+                           FontSize="20"
+                           FontAttributes="Bold" />
+
+                    <Label x:Name="cenaLabel"
+                           Text="Cena całkowita: 0 zł"
+                           FontSize="22"
+                           TextColor="Red" />
+
+                </VerticalStackLayout>
+
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+
+</ContentPage>

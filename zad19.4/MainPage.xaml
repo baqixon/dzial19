@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="zad19._4.MainPage">
+
+    <ScrollView>
+
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Rejestracja na konferencję IT"
+               FontSize="26"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+
+            <Frame BorderColor="Gray">
+
+                <VerticalStackLayout Spacing="10">
+
+                    <Label Text="Dane uczestnika"
+                       FontSize="20"
+                       FontAttributes="Bold" />
+
+                    <Entry x:Name="nameEntry"
+                       Placeholder="Imię i nazwisko" />
+
+                    <Entry x:Name="emailEntry"
+                       Placeholder="Email"
+                       Keyboard="Email" />
+
+                    <Picker x:Name="companyPicker"
+                        Title="Wybierz firmę">
+
+                        <Picker.Items>
+                            <x:String>Google</x:String>
+                            <x:String>Microsoft</x:String>
+                            <x:String>Apple</x:String>
+                            <x:String>Amazon</x:String>
+                            <x:String>IBM</x:String>
+                            <x:String>Inna</x:String>
+                        </Picker.Items>
+
+                    </Picker>
+
+                </VerticalStackLayout>
+
+            </Frame>
+
+            <Frame BorderColor="Gray">
+
+                <VerticalStackLayout>
+
+                    <Label Text="Dzień konferencji"
+                       FontSize="20"
+                       FontAttributes="Bold" />
+
+                    <DatePicker x:Name="conferenceDatePicker" />
+
+                </VerticalStackLayout>
+
+            </Frame>
+
+            <Frame BorderColor="Gray">
+
+                <VerticalStackLayout Spacing="10">
+
+                    <Label Text="Pakiet uczestnictwa"
+                       FontSize="20"
+                       FontAttributes="Bold" />
+
+                    <RadioButton x:Name="basicRadio"
+                             Content="Basic (200 zł)"
+                             GroupName="Pakiet"
+                             CheckedChanged="OnPackageChanged" />
+
+                    <RadioButton x:Name="standardRadio"
+                             Content="Standard (350 zł)"
+                             GroupName="Pakiet"
+                             IsChecked="True"
+                             CheckedChanged="OnPackageChanged" />
+
+                    <RadioButton x:Name="premiumRadio"
+                             Content="Premium (500 zł)"
+                             GroupName="Pakiet"
+                             CheckedChanged="OnPackageChanged" />
+
+                </VerticalStackLayout>
+
+            </Frame>
+
+            <Frame BorderColor="Gray">
+
+                <VerticalStackLayout Spacing="10">
+
+                    <Label Text="Osoby towarzyszące"
+                       FontSize="20"
+                       FontAttributes="Bold" />
+
+                    <Stepper x:Name="peopleStepper"
+                         Minimum="0"
+                         Maximum="3"
+                         Increment="1"
+                         Value="0"
+                         ValueChanged="OnStepperChanged" />
+
+                    <Label x:Name="peopleLabel"
+                       Text="Liczba osób: 0"
+                       FontSize="18" />
+
+                </VerticalStackLayout>
+
+            </Frame>
+
+            <Frame BackgroundColor="LightYellow"
+               BorderColor="Orange">
+
+                <VerticalStackLayout>
+
+                    <Label Text="Podsumowanie ceny"
+                       FontSize="20"
+                       FontAttributes="Bold" />
+
+                    <Label x:Name="priceLabel"
+                       Text="Cena całkowita: 0 zł"
+                       FontSize="24"
+                       TextColor="Red" />
+
+                </VerticalStackLayout>
+
+            </Frame>
+
+            <Button Text="Zarejestruj się"
+                FontSize="20"
+                Clicked="OnRegisterClicked" />
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>
