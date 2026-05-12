@@ -1,4 +1,5 @@
-cweter to 19.2
+cweter to 19.2.
+
 19.1
 1. Bez tego Picker próbowałby wyświetlać cały obiekt jako tekst, najczęściej poprzez wywołanie ToString(). Efekt mógłby wyglądać np. tak:
 2. SelectedIndex = -1 oznacza żeżaden element nie jest wybrany.
